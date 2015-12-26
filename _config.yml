@@ -1,0 +1,24 @@
+# Site settings
+title:            "회귀분석"
+tagline:          'Regression Analysis'
+description:      '회귀분석을 위한 통계 패키지와 자료'
+url:              http://regbook.github.io
+author:
+  name:           'regbook'
+  url:            https://github.com/regbook
+
+github:
+  repo:           https://github.com/regbook/regbook
+
+# Dependencies
+markdown:         redcarpet
+redcarpet:
+  extensions: ["no_intra_emphasis", "fenced_code_blocks", "autolink", "strkethrough", "with_toc_data", "tables"]
+  
+highlighter : pygments
+
+# Permalinks
+permalink:        /pages/:categories/:title
+
+pagenate: 20
+
