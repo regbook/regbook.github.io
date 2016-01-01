@@ -19,18 +19,19 @@ title: 영향력 관측치
 <link rel="stylesheet" href="http://olance.github.io/jQuery-switchButton/jquery.switchButton.css">
 <script src="http://olance.github.io/jQuery-switchButton/jquery.switchButton.js"></script>
 
-<div style="width:600px">
+<div style="width:100%">
 <button type="button" onclick="clearAll()">Clear All</button>
 <button type="button" onclick="exampleDataset()">Example</button>
 
-<div class="switch-wrapper" style="display: inline-block; position: relative; top:5px; float: right;">
+<div style="display: inline-block; position: relative; top:5px; float: right;">
 	<input type="checkbox" name="add" value="1" checked>
 </div>
 
+
 <script type="text/javascript">
-$("input[type=checkbox]").switchButton({
-on_label: 'add',
-off_label: 'remove'
+$("input[name=add]").switchButton({
+	on_label: 'add',
+		off_label: 'remove'
 });
 </script>
 

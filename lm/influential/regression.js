@@ -14,8 +14,9 @@
  */
 
 //== head
-var height = 600;
-var width = 600;
+var width = $("#plot").parent().width();
+var height = width;
+
 var svg = d3.select("#plot")
     .append("svg")
     .attr("width", width)
