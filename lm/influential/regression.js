@@ -89,6 +89,11 @@ svg.on("click", function() {
 });
 
 
+
+
+
+
+
 function addPoint(x, y) {
     svg.append("circle")
 	.attr("cx", x)
@@ -109,7 +114,15 @@ function addPoint(x, y) {
 		updateRegressionLine();
 	    }
 	})
-	.call(drag);
+	.call(drag)
+	.on("touchmove", function() {
+	    var x = d3.event.x;
+	    var y = d3.event.y;
+	    d3.select(this)
+		.attr("cx", x)
+		.attr("cy", y);
+	    updateRegressionLine();	    
+	});
 }
 
 var drag = d3.behavior.drag()

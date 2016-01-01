@@ -12,8 +12,8 @@ title: 영향력 관측치
 - 마우스로 클릭하여 데이터를 추가할 수 있다.
 - 스위치를 "remove"로 옮긴 후 마우스로 점을 클릭하여 데이터를 제거할 수 있다.
 - 점을 드래그하여 데이터를 변경할 수 있다.
-- Shift키를 누른 상태에서 점을 클릭하면 삭제된다.
 - Clear All 버튼을 누르면 모든 데이터가 삭제된다.
+- Example 버튼을 누르면 예제 데이터가 표시된다.
 
 
 <link rel="stylesheet" href="http://olance.github.io/jQuery-switchButton/jquery.switchButton.css">
