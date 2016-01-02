@@ -21,7 +21,7 @@ var svg = d3.select("#plot")
     .append("svg")
     .attr("width", width)
     .attr("height", height)
-    .style("border", "1px solid black");
+    .style("border", "1px solid #aaaaaa");
 
 
 var margin = { top : 30, right : 30, bottom : 30, left : 30 };  // top right bottom left
@@ -98,7 +98,7 @@ function addPoint(x, y) {
 	.style("cursor", "pointer")
 	.on("mouseenter", function() {
 	    d3.select(this)
-		.style("fill", "crimson");
+		.style("fill", "#bf616a");
 	})
 	.on("mouseleave", function() {
 	    d3.select(this)
@@ -121,7 +121,7 @@ var drag = d3.behavior.drag()
     .on("dragstart", function(d) {
 	d3.event.sourceEvent.stopPropagation();
 	d3.select(this)
-	    .style("fill", "crimson")
+	    .style("fill", "#bf616a")
 	    .attr("r", 10);
     })
     .on("drag", function(d) {

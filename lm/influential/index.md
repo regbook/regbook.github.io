@@ -16,15 +16,37 @@ title: 영향력 관측치
 - Example 버튼을 누르면 예제 데이터가 표시된다. 예제는 R 패키지 `regbook`에
   포함된 `infludata`이다. 강근석·김충락(2013)의 예제5-1 참조.
 
+<style>
+button {
+    border: 1px solid #aaaaaa;
+	background:#ffffff;
+	-moz-border-radius:42px;
+	-webkit-border-radius:42px;
+	border-radius:42px;
+	display:inline-block;
+	cursor:pointer;
+	color:#adadad;
+	margin: 5px 0px;
+}
+button:hover {
+	background-color: #0088cc;
+	color: #ffffff;
+	border: 1px solid #0088cc;
+}
+button:active {
+
+}
+</style>
 
 <link rel="stylesheet" href="http://olance.github.io/jQuery-switchButton/jquery.switchButton.css">
 <script src="http://olance.github.io/jQuery-switchButton/jquery.switchButton.js"></script>
 
 <div style="width:100%">
+
 <button type="button" onclick="clearAll()">Clear All</button>
 <button type="button" onclick="exampleDataset()">Example</button>
 
-<div style="display: inline-block; position: relative; top:5px; float: right;">
+<div style="display: inline-block; position: relative; top:10px; float: right;">
 	<input type="checkbox" name="add" value="1" checked>
 </div>
 
@@ -38,16 +60,26 @@ $("input[name=add]").switchButton({
 
 <div id="plot"></div>
 
-<math xmlns="http://www.w3.org/1998/Math/MathML">
-	<mi>y</mi>
-	<mo>=</mo>
-	<span id="intercept"></span>
-	<span id="slope"></span>
-	<mi>x</mi>
+<math>
+	<mtable columnspacing="0.28em" displaystyle="true">
+		<mtr>
+				<mi>y</mi>
+			<maligngroup/>
+				<mo>=</mo>
+				<mn id="intercept"></mn>
+				<mn id="slope"></mn>
+				<mo>&InvisibleTimes;</mo>
+				<mi>x</mi>
+		</mtr>
+		<mtr>
+				<msup><mi>R</mi><mn>2</mn></msup>
+			<maligngroup/>
+			<mo>=</mo></maligngroup>
+			<mn id="rsquared"></mn>
+		</mtr>
+	</mtable>
 </math>
 
-
-<i>R<sup>2</sup></i> = <span id="rsquared"></span>
 
 <div>
 
