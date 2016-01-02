@@ -13,7 +13,8 @@ title: 영향력 관측치
 - 스위치를 "remove"로 옮긴 후 마우스로 점을 클릭하여 데이터를 제거할 수 있다.
 - 점을 드래그하여 데이터를 변경할 수 있다.
 - Clear All 버튼을 누르면 모든 데이터가 삭제된다.
-- Example 버튼을 누르면 예제 데이터가 표시된다.
+- Example 버튼을 누르면 예제 데이터가 표시된다. 예제는 R 패키지 `regbook`에
+  포함된 `infludata`이다. 강근석·김충락(2013)의 예제5-1 참조.
 
 
 <link rel="stylesheet" href="http://olance.github.io/jQuery-switchButton/jquery.switchButton.css">
@@ -47,8 +48,6 @@ $("input[name=add]").switchButton({
 
 
 <i>R<sup>2</sup></i> = <span id="rsquared"></span>
-
-
 
 <div>
 

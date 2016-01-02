@@ -78,7 +78,6 @@ svg.append("g")
 
 svg.on("click", function() {
     if(d3.event.defaultPrevented) return;
-    if(d3.event.shiftKey) return;
     
     var pos = d3.mouse(this);
 
@@ -91,9 +90,6 @@ svg.on("click", function() {
 
 
 
-
-
-
 function addPoint(x, y) {
     svg.append("circle")
 	.attr("cx", x)
@@ -102,30 +98,32 @@ function addPoint(x, y) {
 	.style("cursor", "pointer")
 	.on("mouseenter", function() {
 	    d3.select(this)
-		.style("fill", "red");
+		.style("fill", "crimson");
 	})
 	.on("mouseleave", function() {
 	    d3.select(this)
 		    .style("fill", "black");
 	})
-	.on("click", function() {
-	    if(!$("input[name=add]").is(":checked")) {	    
-		this.remove();
-		updateRegressionLine();
-	    }
-	})
-	.call(drag)
-	.on("touchmove", function() {
-	    var x = d3.event.x;
-	    var y = d3.event.y;
-	    d3.select(this)
-		.attr("cx", x)
-		.attr("cy", y);
-	    updateRegressionLine();	    
-	});
+	.on("click", removePoint)
+	.on("touch", removePoint)
+	.call(drag);
+}
+
+
+var removePoint = function() {
+    if(!$("input[name=add]").is(":checked")) {	    
+	this.remove();
+	updateRegressionLine();
+    }
 }
 
 var drag = d3.behavior.drag()
+    .on("dragstart", function(d) {
+	d3.event.sourceEvent.stopPropagation();
+	d3.select(this)
+	    .style("fill", "crimson")
+	    .attr("r", 10);
+    })
     .on("drag", function(d) {
 	var x = d3.event.x;
 	var y = d3.event.y;
@@ -135,8 +133,12 @@ var drag = d3.behavior.drag()
 
 
 	updateRegressionLine();
+    })
+    .on("dragend", function(d) {
+	d3.select(this)
+	    .style("fill", "black")
+	    .attr("r", 5);
     });
-
 
 function lsfit(points) {
     var n = points.length;
